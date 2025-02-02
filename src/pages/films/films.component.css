@@ -1,0 +1,26 @@
+.search-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+
+  .film-card {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+  }
+  
+  .film-card h3 {
+    margin: 0;
+    color: #333;
+  }
+  
+  .film-card p {
+    margin: 5px 0;
+    color: #666;
+  }

@@ -1,1 +1,35 @@
 /* You can add global styles to this file, and also import other style files */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #222;
+    padding: 1rem 2rem;
+  }
+  
+  .nav-left {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .nav-right {
+    margin-left: auto;
+  }
+  
+  .nav-link, .nav-logo {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+  }
+  
+  .nav-link:hover, .admin-link:hover {
+    background: #444;
+    border-radius: 5px;
+  }
+  
+  .admin-link {
+    font-weight: bold;
+    color: #ffcc00;
+  }

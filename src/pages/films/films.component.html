@@ -1,0 +1,27 @@
+<div class="container">
+  <h2>Films Showing Now!!! 🍿</h2>
+  <p>Here you can browse all of our current films</p>
+
+  <!-- Search Bar -->
+  <input type="text" [(ngModel)]="searchQuery" (input)="searchFilms()" placeholder="Search films..." class="search-input">
+
+  <button (click)="showAllFilms()" class="btn">Show All Films</button>
+
+  <!-- Display Films -->
+  <div *ngIf="films.length > 0">
+    <ul>
+      <li *ngFor="let film of films">
+        <div class="film-card">
+          <h3>{{ film.title }}</h3>
+          <p><strong>Title:</strong> {{ film.filmName }}</p>
+          <p><strong>Genre:</strong> {{ film.genre}}</p>
+          <p><strong>Rating:</strong> {{ film.rating }}</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <p *ngIf="films.length === 0 && searchQuery">No films found.</p>
+
+  <a routerLink="/" class="btn">Back to Home</a>
+</div>

@@ -1,0 +1,18 @@
+{
+    "/films": {
+      "target": "http://localhost:8083",  
+      "secure": false
+    },
+    "/cinemas": {
+      "target": "http://localhost:8082",  
+      "secure": false
+    },
+    "/users": {
+      "target": "http://localhost:8085", 
+      "secure": false
+    },
+    "/bookings": {
+      "target": "http://localhost:8081", 
+      "secure": false
+    }
+  }
