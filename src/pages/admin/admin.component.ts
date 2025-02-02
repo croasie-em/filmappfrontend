@@ -16,23 +16,16 @@ export class AdminComponent {
   password: string = '';
   errorMessage: string = '';
 
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(private router: Router) {}
 
   login() {
-    const loginData = { username: this.username, password: this.password };
-    this.http.post('/api/auth/login', loginData).subscribe({
-      next: (response: any) => {
-        if (response.role === 'admin') {
-          localStorage.setItem('token', response.token);
-          this.router.navigate(['/admin-dashboard']);
-        } else {
-          this.errorMessage = 'Access denied! Admins only.';
-        }
-      },
-      error: () => {
-        this.errorMessage = 'Invalid credentials. Try again.';
-      }
-    });
+    if (this.username === 'admin' && this.password === 'password') {
+      localStorage.setItem('token', 'fake-token'); // Storing a fake token for session
+      localStorage.setItem('username', this.username);
+      this.router.navigate(['/admin-dashboard']); // Redirect to the dashboard
+    } else {
+      this.errorMessage = 'Invalid credentials. Try again.';
+    }
   }
 
 }

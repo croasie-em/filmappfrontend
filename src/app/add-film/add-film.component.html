@@ -1,0 +1,32 @@
+<div class="film-container">
+    <h2>🎬 Manage Films</h2>
+  
+    <!-- Form to add a new film -->
+    <form (ngSubmit)="addFilm()">
+      <label for="filmName">Film Name:</label>
+      <input type="text" id="filmName" [(ngModel)]="newFilm.filmName" name="filmName" required>
+  
+      <label for="genre">Genre:</label>
+      <input type="text" id="genre" [(ngModel)]="newFilm.genre" name="genre" required>
+  
+      <label for="description">Description:</label>
+      <input type="text" id="description" [(ngModel)]="newFilm.description" name="description" required>
+  
+      <label for="rating">Rating:</label>
+      <input type="text" id="rating" [(ngModel)]="newFilm.rating" name="rating" required>
+  
+      <label for="runTime">Runtime (in minutes):</label>
+      <input type="number" id="runTime" [(ngModel)]="newFilm.runTime" name="runTime" required>
+  
+      <button type="submit">➕ Add Film</button>
+    </form>
+  
+    <h3>Current Films</h3>
+    <ul>
+      <li *ngFor="let film of films">
+        {{ film.filmName }} - {{ film.genre }} ({{ film.rating }} rating) - {{ film.runTime }} min
+        <button (click)="deleteFilm(film.filmid)">🗑️ Delete</button>
+      </li>
+    </ul>
+  </div>
+  

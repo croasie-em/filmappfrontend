@@ -1,0 +1,24 @@
+<div class="cinema-container">
+    <h2>🎬 Manage Cinemas</h2>
+
+    <form (ngSubmit)="addCinema()">
+        <label for="cinemaName">Cinema Name:</label>
+        <input type="text" id="cinemaName" [(ngModel)]="newCinema.cinemaName" name="cinemaName" required>
+
+        <label for="city">City:</label>
+        <input type="text" id="city" [(ngModel)]="newCinema.city" name="city" required>
+
+        <label for="numberOfScreens">Number of Screens:</label>
+        <input type="text" id="numberOfScreens" [(ngModel)]="newCinema.numberOfScreens" name="numberOfScreens" required>
+
+        <button type="submit">➕ Add Cinema</button>
+    </form>
+
+    <h3>Current Cinemas</h3>
+    <ul>
+        <li *ngFor="let cinema of cinemas">
+            {{ cinema.cinemaName }} - {{ cinema.city }} ({{ cinema.numberOfScreens }} screens)
+            <button (click)="deleteCinema(cinema.cinemaid)">🗑️ Delete</button>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,21 @@
+<div class="admin-dashboard">
+    <h2>Welcome, {{ adminName }}! 🎉</h2>
+    <p>
+        This is your admin dashboard. Please select a link below to add films, add cinemas, 
+        or view the current bookings and users.
+    </p>
+
+    <nav>
+        <ul>
+            <li><a routerLink="/admin-dashboard/add-cinema">➕ Add Cinema</a></li>
+            <li><a routerLink="/admin-dashboard/add-film">➕ Add Film</a></li>
+            <li><a routerLink="/admin-dashboard/view-bookings">View Bookings</a></li>
+        </ul>
+    </nav>
+
+    <button (click)="logout()">Logout</button>
+
+   
+</div>
+
+<router-outlet></router-outlet>

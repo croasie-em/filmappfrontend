@@ -1,0 +1,14 @@
+<div class="bookings-container">
+    <h2>📅 Current Bookings</h2>
+  
+    <ul>
+      <li *ngFor="let booking of bookings">
+        <p><strong>Booking ID:</strong> {{ booking.bookingId }}</p>
+        <p><strong>Film ID:</strong> {{ booking.filmId }}</p>
+        <p><strong>Cinema ID:</strong> {{ booking.cinemaId }}</p>
+        <p><strong>User ID:</strong> {{ booking.userId }}</p>
+        <p><strong>Booking Date:</strong> {{ booking.bookingDate }}</p>
+        <hr />
+      </li>
+    </ul>
+  </div>
