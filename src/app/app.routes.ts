@@ -8,6 +8,12 @@ import { AdminDashboardComponent } from './pages/admin-dashboard/admin-dashboard
 import { AddCinemaComponent } from './add-cinema/add-cinema.component';
 import { AddFilmComponent } from './add-film/add-film.component';
 import { ViewBookingsComponent } from './pages/view-bookings/view-bookings.component';
+import { RegisterUserComponent } from './register-user/register-user.component';
+import { LoginComponent } from './login/login.component';
+import { RouterModule } from '@angular/router';
+import { NgModule } from '@angular/core';
+
+
 
 export const routes: Routes = [
     { path: '', component: HomeComponent },
@@ -18,9 +24,17 @@ export const routes: Routes = [
     { path: 'admin-dashboard', component: AdminDashboardComponent },
     { path: 'admin-dashboard/add-cinema', component: AddCinemaComponent },
     { path: 'admin-dashboard/add-film', component: AddFilmComponent },
-    { path: 'admin-dashboard/view-bookings', component: ViewBookingsComponent }
+    { path: 'admin-dashboard/view-bookings', component: ViewBookingsComponent },
+    {path: 'register', component: RegisterUserComponent},
+    {path: 'login', component: LoginComponent}
 
   ];
+
+  @NgModule({
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule] 
+  })
+  export class AppRoutingModule {}
 
 
   

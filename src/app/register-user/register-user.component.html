@@ -1,0 +1,30 @@
+<div class="register-container">
+    <h2>📝 Register</h2>
+  
+    <form [formGroup]="registerForm" (ngSubmit)="registerUser()">
+      <label for="fullName">Full Name</label>
+      <input id="fullName" type="text" formControlName="fullName" required />
+  
+      <label for="email">Email</label>
+      <input id="email" type="email" formControlName="email" required />
+  
+      <label for="username">Username</label>
+      <input id="username" type="text" formControlName="username" required />
+  
+      <label for="password">Password</label>
+      <input id="password" type="password" formControlName="password" required />
+  
+      <button type="submit" [disabled]="registerForm.invalid">Register</button>
+    </form>
+  
+    <p *ngIf="registrationSuccess" class="success-message">
+      ✅ Registration successful! Redirecting to login...
+    </p>
+    
+    <p *ngIf="registrationError" class="error-message">
+      ❌ {{ registrationError }}
+    </p>
+  
+    <p>Already have an account? <a routerLink="/login">Login here</a></p>
+  </div>
+  <router-outlet></router-outlet>
